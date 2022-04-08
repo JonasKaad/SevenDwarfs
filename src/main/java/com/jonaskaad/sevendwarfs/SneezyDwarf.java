@@ -1,7 +1,7 @@
-package com.jonaskaad.dwarfs;
+package com.jonaskaad.sevendwarfs;
 
 import java.util.ArrayList;
-import static com.jonaskaad.dwarfs.DwarfEnum.*;
+import static com.jonaskaad.sevendwarfs.DwarfEnum.*;
 
 public class SneezyDwarf implements DwarfInterface{
 

@@ -1,4 +1,4 @@
-package com.jonaskaad.dwarfs;
+package com.jonaskaad.sevendwarfs;
 
 import java.util.ArrayList;
 

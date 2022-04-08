@@ -3,6 +3,6 @@ module com.jonaskaad.sevendwarfs {
     requires javafx.fxml;
 
 
-    opens com.jonaskaad.sevendwarfs to javafx.fxml;
     exports com.jonaskaad.sevendwarfs;
+    opens com.jonaskaad.sevendwarfs to javafx.fxml;
 }

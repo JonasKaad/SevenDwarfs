@@ -1,8 +1,8 @@
 package com.jonaskaad.sevendwarfs;
 
-import com.jonaskaad.dwarfs.DwarfEnum;
-import com.jonaskaad.dwarfs.DwarfFacade;
-import com.jonaskaad.dwarfs.DwarfInterface;
+import com.jonaskaad.sevendwarfs.DwarfEnum;
+import com.jonaskaad.sevendwarfs.DwarfFacade;
+import com.jonaskaad.sevendwarfs.DwarfInterface;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
