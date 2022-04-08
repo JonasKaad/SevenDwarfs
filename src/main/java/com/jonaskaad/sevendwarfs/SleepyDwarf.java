@@ -28,6 +28,7 @@ public class SleepyDwarf implements DwarfInterface{
     @Override
     public String reactToDwarf(DwarfEnum dwarfType, ArrayList<DwarfInterface> dwarfs, int numberOfEvents) {
         String reaction = "";
+        
         // If last in list:
         if(numberOfEvents == 3){
             reaction += "Sleepy notices that everyone else has calmed down and goes back to sleep.\n";

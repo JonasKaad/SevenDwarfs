@@ -28,6 +28,7 @@ public class HappyDwarf implements DwarfInterface{
     @Override
     public String reactToDwarf(DwarfEnum dwarfType, ArrayList<DwarfInterface> dwarfs, int numberOfEvents) {
         String reaction = "";
+
         // If last in list:
         if(numberOfEvents == 3){
             reaction += "Happy is happy that everyone is gathered and savors the moment.\n";

@@ -27,8 +27,8 @@ public class SneezyDwarf implements DwarfInterface{
     @Override
     public String reactToDwarf(DwarfEnum dwarfType, ArrayList<DwarfInterface> dwarfs, int numberOfEvents) {
         String reaction = "";
-        // If last in list:
 
+        // If last in list:
         if(numberOfEvents == 3){
             reaction += "Sneezy has finally gotten his sneezing under control and relaxes a bit.\n";
         }

@@ -45,6 +45,7 @@ public class PrimaryController {
         dwarfMap = new HashMap<>();
         current = "";
         incoming = "start";
+
         for (DwarfEnum d : DwarfEnum.values()) {
             listOfAllDwarfs.add(facade.createDwarf(d));
         }
@@ -123,7 +124,6 @@ public class PrimaryController {
         initialize();
         getRandomDwarfs();
     }
-
 
     public int[] getRandomDwarfs(){
         Random random = new Random();

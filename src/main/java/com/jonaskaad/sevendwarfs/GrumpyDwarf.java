@@ -26,6 +26,7 @@ public class GrumpyDwarf implements DwarfInterface{
     @Override
     public String reactToDwarf(DwarfEnum dwarfType, ArrayList<DwarfInterface> dwarfs, int numberOfEvents) {
         String reaction = "";
+
         // If last in list:
         if(numberOfEvents == 3){
             reaction += "Grumpy realizes that he has been grumpy all day, and calms down." + "\n";
