@@ -26,46 +26,52 @@ public class HappyDwarf implements DwarfInterface{
     }
 
     @Override
-    public void reactToDwarf(DwarfEnum dwarfType, ArrayList<DwarfInterface> dwarfs) {
-        switch (dwarfType) {
-            case Grumpy -> {
-                System.out.println("Happy seems to calm down Grumpy so they relax together.");
-                if(facade.checkDwarfNotInList(dwarfs, Sleepy)){
-                    System.out.println("Grumpy eventually gets bored and decides to smash some plates.");
-                    System.out.println("He accidentally wakes up Sleepy!");
-                    dwarfs.add(facade.createDwarf(Sleepy));
+    public String reactToDwarf(DwarfEnum dwarfType, ArrayList<DwarfInterface> dwarfs, int numberOfEvents) {
+        String reaction = "";
+        // If last in list:
+        if(numberOfEvents == 3){
+            reaction += "Happy is happy that everyone is gathered and savors the moment.\n";
+        }
+        else {
+            switch (dwarfType) {
+                case Grumpy -> {
+                    reaction += "Happy seems to calm down Grumpy so they relax together.\n";
+                    if (facade.checkDwarfNotInList(dwarfs, Sleepy)) {
+                        reaction += "Grumpy eventually gets bored and decides to smash some plates.\n"
+                                + "He accidentally wakes up Sleepy!\n";
+                        dwarfs.add(facade.createDwarf(Sleepy));
+                    } else if (facade.checkDwarfNotInList(dwarfs, Sneezy)) {
+                        reaction += "Grumpy eventually decides to jump around a bit.\n"
+                                + "This causes Sneezy to come in and tell him to stop!\n";
+                        dwarfs.add(facade.createDwarf(Sneezy));
+                    }
                 }
-                else if(facade.checkDwarfNotInList(dwarfs, Sneezy)){
-                    System.out.println("Grumpy eventually decides to jump around a bit.");
-                    System.out.println("This causes Sneezy to come in and tell him to stop!");
-                    dwarfs.add(facade.createDwarf(Sneezy));
+                case Sneezy -> {
+                    reaction += "Happy is happy to see Sneezy, which makes Sneezy very excited\n";
+                    if (facade.checkDwarfNotInList(dwarfs, Sleepy)) {
+                        reaction += "Sneezy gets so excited that he sneezes way too loud, waking up Sleepy\n"
+                                + "Sneezy gets embarrassed and flees for a moment\n";
+                        dwarfs.remove(dwarfs.size()-1);
+                        dwarfs.add(facade.createDwarf(Sleepy));
+                    } else if ((facade.checkDwarfNotInList(dwarfs, Grumpy))) {
+                        reaction += "Sneezy suddenly gets an itch which causes him to sneeze very loudly!\n"
+                                + "This causes Grumpy to come running down the stairs yelling!\n";
+                        dwarfs.add(facade.createDwarf(Grumpy));
+                    }
                 }
-            }
-            case Sneezy -> {
-                System.out.println("Happy is happy to see Sneezy, which makes Sneezy very excited");
-                if(facade.checkDwarfNotInList(dwarfs, Sleepy)){
-                    System.out.println("Sneezy gets so excited that he sneezes way too loud, waking up Sleepy");
-                    dwarfs.add(facade.createDwarf(Sleepy));
-                }
-                else if((facade.checkDwarfNotInList(dwarfs, Grumpy))){
-                    System.out.println("Sneezy suddenly gets an itch which causes him to sneeze very loudly!");
-                    System.out.println("This causes Grumpy to come running down the stairs yelling!");
-                    dwarfs.add(facade.createDwarf(Grumpy));
-                }
-            }
-            case Sleepy -> {
-                System.out.println("Happy watches Sleepy sleep and tries very carefully to not wake him up.");
-                if(facade.checkDwarfNotInList(dwarfs, Sneezy)){
-                    System.out.println("He accidentally trips over Sleepy's shoes, which causes Sneezy to come running.");
-                    dwarfs.add(facade.createDwarf(Sneezy));
-                }
-                else if(dwarfs.size() <= 3 && facade.checkDwarfNotInList(dwarfs, Grumpy)){
-                    System.out.println("Happy thinks that Sleepy has slept for too long, so he yells loudly to wake him.");
-                    System.out.println("However, he accidentally disturbs Grumpy, which causes him to come stumbling down the stairs");
-                    dwarfs.add(facade.createDwarf(Grumpy));
+                case Sleepy -> {
+                    reaction += "Happy watches Sleepy sleep and tries very carefully to not wake him up.\n";
+                    if (facade.checkDwarfNotInList(dwarfs, Sneezy)) {
+                        reaction += "He accidentally trips over Sleepy's shoes, which causes Sneezy to come running.\n";
+                        dwarfs.add(facade.createDwarf(Sneezy));
+                    } else if (dwarfs.size() <= 3 && facade.checkDwarfNotInList(dwarfs, Grumpy)) {
+                        reaction += "However, the silences is broken when Grumpy comes stumbling down the stairs!";
+                        dwarfs.add(facade.createDwarf(Grumpy));
+                    }
                 }
             }
         }
+        return reaction;
     }
 
     @Override

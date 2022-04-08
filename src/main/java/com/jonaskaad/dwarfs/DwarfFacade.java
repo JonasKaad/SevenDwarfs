@@ -15,9 +15,6 @@ public class DwarfFacade {
     private DwarfFacade() {
     }
 
-    //public enum DWARFS {SLEEPY, HAPPY, GRUMPY, SNEEZY}
-
-
     public boolean checkDwarfNotInList(ArrayList<DwarfInterface> dwarfs, DwarfEnum dwarfEnum){
         boolean dwarfNotInList = true;
         for (DwarfInterface d : dwarfs){
@@ -27,7 +24,6 @@ public class DwarfFacade {
         }
         return dwarfNotInList;
     }
-
 
     public DwarfInterface createDwarf(DwarfEnum dwarf) {
         DwarfInterface currentDwarf = null;
@@ -39,9 +35,5 @@ public class DwarfFacade {
             default -> System.out.println("Unknown Dwarf");
         }
         return currentDwarf;
-    }
-
-    public DwarfEnum getDwarfType(DwarfInterface dwarf){
-        return dwarf.getType();
     }
 }
