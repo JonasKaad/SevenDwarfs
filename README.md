@@ -6,4 +6,4 @@ Or read the [PDF](https://github.com/JonasKaad/SevenDwarfs/blob/c10fa36eef6257ca
 
 ## Demo of program:
 
-https://user-images.githubusercontent.com/36827320/162547090-2b43429a-5f25-4183-a1c0-d1857d3dac01.mp4
+https://user-images.githubusercontent.com/36827320/162548492-98e0c533-ae34-4d01-ab36-c9770e71a4df.mp4
