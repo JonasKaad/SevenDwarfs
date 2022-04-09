@@ -84,7 +84,7 @@ public class PrimaryController {
 
         if(current.equals(incoming)){
             nextEventButton.setDisable(true);
-            textArea.appendText("\n \n \n" + "=== Event Done. Press Reset to try again ===");
+            textArea.appendText("\n \n \n" + "=== Story over! Quit the program or use reset to try again ===");
         }
         else{
             textArea.appendText(incoming + "\n");
